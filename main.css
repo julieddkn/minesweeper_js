@@ -1,0 +1,82 @@
+
+@font-face {
+ font-family: "Futura";
+ src: url("https://julieddkn.com/fonts/futura/Futura%20Bold%20font.ttf") format("ttf");
+}
+
+body {
+    font-family: 'Futura';
+    text-align: center;
+    margin-top: 100px;
+}
+
+.grid {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto;
+
+}
+
+.rules {
+    margin: 0 auto;
+    margin-bottom: 60px;
+    width: 300px;
+    font-size: .8rem;
+}
+
+.grid div {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    background-color: #F0E5FF;
+    position: relative;
+    text-align: center;
+}
+
+.grid div::after {
+    content: '';
+    height: 40px;
+    width: 40px;
+    background-color: #DAC4EA;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translate(5px, 5px);
+}
+
+.info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.valid {
+    background-color: darkseagreen;
+}
+
+.checked {
+    top: 0;
+    left: 0;
+    transform: translate(5px, 5px);
+    z-index: 2;
+    background-color: #DAC4EA !important;
+}
+
+.checked::after {
+    opacity: 0;
+}
+
+@media (max-width: 550px) { 
+    .grid {
+        width: 400px;
+        height: 400px;
+    }
+    .grid div, .grid div::after {
+        height: 30px;
+        width: 30px;
+    }
+ }
